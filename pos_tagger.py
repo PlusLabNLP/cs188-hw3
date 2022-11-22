@@ -29,7 +29,7 @@ class POSTagger():
         # Count the unigrams and bigrams for pos tags
         self.tag_unigram_cnt = self._count_ngrams(self.tag_corpus, 1)
         self.tag_bigram_cnt = self._count_ngrams(self.tag_corpus, 2)
-        self.all_tags = set(self.tag_unigram_cnt.keys())
+        self.all_tags = sorted(list(set(self.tag_unigram_cnt.keys())))
 
         # Compute the transition and emission probability 
         self.tran_prob = self.compute_tran_prob()
